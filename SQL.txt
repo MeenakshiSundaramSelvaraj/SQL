@@ -1,0 +1,39 @@
+SQL JOIN
+SQL Join is used to fetch data from two or more tables, which is joined to appear as single set of data.
+It is used for combining column from two or more tables by using values common to both tables.
+A table can also join to itself, which is known as, Self Join.
+Types of JOIN
+Following are the types of JOIN that we can use in SQL:
+Inner
+Outer
+Left
+Right
+
+
+Primary Key
+Primary key cannot have a NULL value.
+Each table can have only one primary key.
+By default, Primary key is clustered index and data in the database table is physically organized in the sequence of clustered index.
+Primary key can be related with another table's as a Foreign Key.
+
+Unique Key
+Unique Constraint may have a NULL value.
+Each table can have more than one Unique Constraint.
+By default, Unique key is a unique non-clustered index.
+Unique Constraint can not be related with another table's as a Foreign Key.
+Unique Constraint doesn't supports Auto Increment value.
+
+Foreign Key
+Foreign key is a field in the table that is primary key in another table.
+Foreign key can accept multiple null value.
+Foreign key do not automatically create an index, clustered or non-clustered. You can manually create an index on foreign key.
+We can have more than one foreign key in a table.
+There are actual advantages to having a foreign key be supported with a clustered index, but you get only one per table. What's the advantage? If you are selecting the parent plus all child records, you want the child records next to each other. This is easy to accomplish using a clustered index.
+Having a null foreign key is usually a bad idea. In the example below, the record in [dbo].[child] is what would be referred to as an "orphan record". Think long and hard before doing this.
+
+
+clustered and non-clustered indexes
+! ) There can be only one clustered index per table. However, you can create multiple non-clustered indexes on a single table.
+2 ) Clustered indexes only sort tables. Therefore, they do not consume extra storage. 
+Non-clustered indexes are stored in a separate place from the actual table claiming more storage space.
+3 ) Clustered indexes are faster than non-clustered indexes since they don’t involve any extra lookup step.
